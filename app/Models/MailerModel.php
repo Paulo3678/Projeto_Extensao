@@ -30,7 +30,6 @@ class MailerModel
         $this->mail->SMTPAutoTLS = SMTP_SECURE;
         $this->mail->Port = SMTP_PORT;
         $this->mail->CharSet = "UTF-8";
-        $this->mail->SMTPAuth = true;
 
         $this->from = SMPT_EMAIL_HOST;
         $this->name = SMTP_MAIL_NAME;
