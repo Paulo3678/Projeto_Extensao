@@ -1,0 +1,254 @@
+#conteudo {
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.barra-lateral,
+.card-conteudo {
+  height: 100%;
+}
+.barra-lateral {
+  padding: 20px;
+  width: 20%;
+}
+.card-conteudo {
+  width: 80%;
+}
+
+@media (max-width: 1280px) {
+  .barra-lateral {
+    width: 30%;
+  }
+  .card-conteudo {
+    width: 70%;
+  }
+}
+
+@media (max-width: 992px) {
+  #conteudo {
+    flex-wrap: wrap;
+    height: unset;
+    min-height: unset;
+  }
+  .barra-lateral,
+  .card-conteudo {
+    width: 100%;
+  }
+}
+
+.barra-lateral .lista {
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+  background-color: #f1efef;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.barra-lateral .lista h1 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.barra-lateral ul {
+  margin: 0;
+  height: 100%;
+  border-radius: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.barra-lateral ul li {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.barra-lateral ul li a.item-lista {
+  color: #7d7c7c;
+  text-decoration: none;
+  transition: all 0.3s;
+  padding: 5px;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+.barra-lateral ul li a.item-lista:hover {
+  background-color: #ccc8aa;
+}
+
+.barra-lateral .lista .header button {
+  border: 2px solid #000;
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .barra-lateral .lista .header button {
+    display: inline;
+  }
+  .barra-lateral hr {
+    display: none;
+  }
+  .barra-lateral.active hr {
+    display: block;
+  }
+  .barra-lateral .lista .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .barra-lateral ul {
+    display: none;
+  }
+  .barra-lateral.active ul {
+    display: block;
+  }
+}
+
+.card-conteudo {
+  padding: 40px;
+}
+
+@media (max-width: 992px) {
+  .card-conteudo {
+    padding: 10px;
+  }
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 90% !important;
+  }
+}
+
+/* ENVIANDO FORM */
+#enviando-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100vh;
+  display: none;
+}
+
+#enviando-form.active {
+  display: block;
+}
+
+#enviando-form .wrapper {
+  width: 200px;
+  height: 60px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#enviando-form .circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 15%;
+  transform-origin: 50%;
+  animation: circle 0.5s alternate infinite ease;
+}
+
+@keyframes circle {
+  0% {
+    top: 60px;
+    height: 5px;
+    border-radius: 50px 50px 25px 25px;
+    transform: scaleX(1.7);
+  }
+
+  40% {
+    height: 20px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+
+  100% {
+    top: 0%;
+  }
+}
+
+#enviando-form .circle:nth-child(2) {
+  left: 45%;
+  background-color: #000;
+  animation-delay: 0.2s;
+}
+
+#enviando-form .circle:nth-child(3) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+  background-color: #5272F2;
+}
+
+#enviando-form .shadow {
+  width: 20px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 62px;
+  transform-origin: 50%;
+  z-index: -1;
+  left: 15%;
+  filter: blur(1px);
+  animation: shadow 0.5s alternate infinite ease;
+}
+
+@keyframes shadow {
+  0% {
+    transform: scaleX(1.5);
+  }
+
+  40% {
+    transform: scaleX(1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scaleX(0.2);
+    opacity: 0.4;
+  }
+}
+
+#enviando-form .shadow:nth-child(4) {
+  left: 45%;
+  animation-delay: 0.2s;
+}
+
+#enviando-form .shadow:nth-child(5) {
+  left: auto;
+  right: 15%;
+  animation-delay: 0.3s;
+}
+
+#enviando-form .wrapper span {
+  position: absolute;
+  top: 75px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  width: 400px;
+  left: -50%;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  #enviando-form .wrapper span {
+    width: 280px;
+    left: -20%;
+  }
+}
