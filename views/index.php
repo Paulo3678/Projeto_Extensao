@@ -36,7 +36,6 @@
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-12 col-lg-6">
-                    <?php require_once __DIR__ . "/default/alerts-message.php" ?>
                     <h1>Preencha o formulário</h1>
 
                     <form method="POST" action="/enviar-contato" id="formulario-contato" class="w-100">
